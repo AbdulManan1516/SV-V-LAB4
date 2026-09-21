@@ -1,0 +1,12 @@
+| State-ID | State-name        | Description                                                   | Entry condition                                 | Exit condition                                              |
+| -------- | ----------------- | ------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
+| S-01     | IDLE              | Robot waits for a delivery request.                           | Robot reaches warehouse / is switched on.       | Delivery request received.                                  |
+| S-02     | NAVIGATING        | Robot moves toward the destination.                           | Delivery request received.                      | Destination reached / obstacle detected / battery critical. |
+| S-03     | AVOIDING_OBSTACLE | Robot avoids a detected obstacle.                             | Obstacle detected during navigation.            | Obstacle avoided.                                           |
+| S-04     | DELIVERING        | Robot performs the package delivery.                          | Destination reached.                            | Delivery completed.                                         |
+| S-05     | RETURNING         | Robot travels back to the warehouse.                          | Delivery completed or battery becomes critical. | Warehouse reached.                                          |
+| S-06     | IDLE              | Robot remains ready for the next request.                     | Warehouse reached.                              | New delivery request received.                              |
+| S-07     | NAVIGATING        | Robot continues toward the destination.                       | Obstacle successfully avoided.                  | Destination reached / obstacle detected.                    |
+| S-08     | AVOIDING_OBSTACLE | Robot temporarily stops normal navigation to avoid obstacle.  | Obstacle detected.                              | Obstacle successfully avoided.                              |
+| S-09     | RETURNING         | Robot returns without completing delivery due to low battery. | Critical battery detected.                      | Warehouse reached.                                          |
+| S-10     | DELIVERING        | Robot delivers the package after reaching the destination.    | Destination reached without obstacle handling.  | Successful delivery.                                        |
